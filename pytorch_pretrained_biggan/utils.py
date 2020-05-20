@@ -182,6 +182,8 @@ def one_hot_from_names(class_name_or_list, batch_size=1):
             array of shape (batch_size, 1000)
     """
     try:
+        import nltk
+        nltk.download('wordnet')
         from nltk.corpus import wordnet as wn
     except ImportError:
         raise ImportError("You need to install nltk to use this function")
